@@ -1,0 +1,15 @@
+{
+  "name": "design-patterns-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laboratorio de patrones de diseño en TypeScript",
+  "scripts": {
+    "pattern": "tsx",
+    "abstract-factory": "tsx src/creational/abstract-factory/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
