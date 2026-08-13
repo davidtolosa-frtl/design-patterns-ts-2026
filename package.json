@@ -6,6 +6,7 @@
   "scripts": {
     "pattern": "tsx",
     "abstract-factory": "tsx src/creational/abstract-factory/index.ts",
+    "singleton": "tsx src/creational/singleton/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

@@ -19,10 +19,11 @@ npm install
 npm run pattern -- src/creational/abstract-factory/index.ts
 ```
 
-También hay un script corto para Abstract Factory:
+También hay scripts cortos para algunos patrones:
 
 ```bash
 npm run abstract-factory
+npm run singleton
 ```
 
 ## Verificar TypeScript
