@@ -8,6 +8,8 @@
     "abstract-factory": "tsx src/creational/abstract-factory/index.ts",
     "singleton": "tsx src/creational/singleton/index.ts",
     "observer": "tsx src/behavioral/observer/index.ts",
+    "observer-exercise-1": "tsx src/behavioral/observer/exercises/01-estacion-meteorologica/index.ts",
+    "observer-exercise-2": "tsx src/behavioral/observer/exercises/02-temperatura-maxima/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

@@ -61,6 +61,7 @@ npm run observer
 ## Prácticos
 
 - [01 - Estación meteorológica](./exercises/01-estacion-meteorologica/)
+- [02 - Display de temperatura máxima](./exercises/02-temperatura-maxima/)
 
 El primer práctico modela una estación que recibe temperatura, humedad y
 presión desde sus sensores. La estación notifica a un display de condiciones
@@ -70,6 +71,15 @@ Ejecutar:
 
 ```bash
 npm run pattern -- src/behavioral/observer/exercises/01-estacion-meteorologica/index.ts
+```
+
+El segundo práctico agrega un observador que conserva y muestra la mayor
+temperatura recibida por la estación.
+
+Ejecutar:
+
+```bash
+npm run observer-exercise-2
 ```
 
 ## Diagrama del práctico
