@@ -10,6 +10,11 @@ didáctico para alumnos hispanohablantes que están aprendiendo a programar.
 Cada carpeta bajo `src/` corresponde a un patrón, con un único `index.ts`
 ejecutable de forma independiente.
 
+Los ejercicios de un patrón deben organizarse dentro de una carpeta
+`exercises/`, con una subcarpeta propia para cada ejercicio y un `index.ts`
+ejecutable dentro de ella. Por ejemplo:
+`src/behavioral/observer/exercises/01-estacion-meteorologica/index.ts`.
+
 ## Regla de idioma (crítica)
 
 - **Nombres de carpetas y archivos → en inglés**, igual que en la
@@ -39,6 +44,7 @@ src/
 ```bash
 npm install
 npm run pattern -- src/<categoria>/<patron>/index.ts   # ejecutar un ejemplo
+npm run pattern -- src/<categoria>/<patron>/exercises/<ejercicio>/index.ts
 npm run typecheck                                       # tsc --noEmit
 ```
 
