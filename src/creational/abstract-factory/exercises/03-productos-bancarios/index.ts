@@ -53,6 +53,18 @@ class TarjetaCreditoGold implements TarjetaCredito {
   conocerCaracteristicas(): string { return "Límite: $2000000"; }
 }
 
+class CajaDeAhorroEstudiante implements CajaDeAhorro {
+  conocerCaracteristicas(): string { return "Comisión: 0%"; }
+}
+
+class TarjetaDebitoEstudiante implements TarjetaDebito {
+  conocerCaracteristicas(): string { return "Gratuita"; }
+}
+
+class TarjetaCreditoEstudiante implements TarjetaCredito {
+  conocerCaracteristicas(): string { return "Límite: $60000"; }
+}
+
 interface FabricaDeProductosBancarios {
   crearCajaDeAhorro(): CajaDeAhorro;
   crearTarjetaDebito(): TarjetaDebito;
@@ -77,6 +89,12 @@ class FabricaGold implements FabricaDeProductosBancarios {
   crearTarjetaCredito(): TarjetaCredito { return new TarjetaCreditoGold(); }
 }
 
+class FabricaEstudiante implements FabricaDeProductosBancarios {
+  crearCajaDeAhorro(): CajaDeAhorro { return new CajaDeAhorroEstudiante(); }
+  crearTarjetaDebito(): TarjetaDebito { return new TarjetaDebitoEstudiante(); }
+  crearTarjetaCredito(): TarjetaCredito { return new TarjetaCreditoEstudiante(); }
+}
+
 function mostrarProductos(
   nombreCategoria: string,
   fabrica: FabricaDeProductosBancarios,
@@ -91,3 +109,4 @@ function mostrarProductos(
 mostrarProductos("Classic", new FabricaClassic());
 mostrarProductos("Platinium", new FabricaPlatinium());
 mostrarProductos("Gold", new FabricaGold());
+mostrarProductos("Estudiante", new FabricaEstudiante());
