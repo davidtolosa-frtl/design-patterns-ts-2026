@@ -10,8 +10,6 @@
  * npm run pattern -- src/creational/abstract-factory/index.ts
  */
 
-// Productos abstractos
-
 interface Silla {
   sentarse(): string;
 }
@@ -19,8 +17,6 @@ interface Silla {
 interface Sofa {
   recostarse(): string;
 }
-
-// Familia de productos: Moderno
 
 class SillaModerna implements Silla {
   sentarse(): string {
@@ -34,8 +30,6 @@ class SofaModerno implements Sofa {
   }
 }
 
-// Familia de productos: Victoriano
-
 class SillaVictoriana implements Silla {
   sentarse(): string {
     return "Te sentás en una silla victoriana, tallada en madera.";
@@ -48,14 +42,10 @@ class SofaVictoriano implements Sofa {
   }
 }
 
-// Fábrica abstracta
-
 interface FabricaDeMuebles {
   crearSilla(): Silla;
   crearSofa(): Sofa;
 }
-
-// Fábricas concretas
 
 class FabricaDeMueblesModernos implements FabricaDeMuebles {
   crearSilla(): Silla {
@@ -77,14 +67,9 @@ class FabricaDeMueblesVictorianos implements FabricaDeMuebles {
   }
 }
 
-// Código cliente: solo conoce la interfaz abstracta
-
 function amueblarSala(fabrica: FabricaDeMuebles): void {
-  const silla = fabrica.crearSilla();
-  const sofa = fabrica.crearSofa();
-
-  console.log(silla.sentarse());
-  console.log(sofa.recostarse());
+  console.log(fabrica.crearSilla().sentarse());
+  console.log(fabrica.crearSofa().recostarse());
 }
 
 console.log("-- Sala moderna --");
