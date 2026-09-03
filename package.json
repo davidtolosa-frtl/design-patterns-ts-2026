@@ -12,9 +12,11 @@
     "observer": "tsx src/behavioral/observer/index.ts",
     "observer-exercise-1": "tsx src/behavioral/observer/exercises/01-estacion-meteorologica/index.ts",
     "observer-exercise-2": "tsx src/behavioral/observer/exercises/02-temperatura-maxima/index.ts",
+    "decorator": "tsx src/structural/decorator/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/node": "^26.4.1",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0"
   }
