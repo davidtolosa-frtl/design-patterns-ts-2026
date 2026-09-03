@@ -70,11 +70,23 @@ class DecoradorSlack extends DecoradorBase {
   }
 }
 
+class DecoradorDiscord extends DecoradorBase {
+  enviar(mensaje: string): void {
+    super.enviar(mensaje);
+    this.enviarDiscord(mensaje);
+  }
+
+  private enviarDiscord(mensaje: string): void {
+    console.log(`  [Discord] Publicando mensaje: "${mensaje}"`);
+  }
+}
+
 // ── Menú interactivo: el usuario arma su propia combinación de canales ───
 const CANALES: Record<string, { etiqueta: string; decorador: new (n: Notifier) => Notifier }> = {
   "1": { etiqueta: "SMS", decorador: DecoradorSMS },
   "2": { etiqueta: "Facebook", decorador: DecoradorFacebook },
   "3": { etiqueta: "Slack", decorador: DecoradorSlack },
+  "4": { etiqueta: "Discord", decorador: DecoradorDiscord },
 };
 
 async function main() {
@@ -85,6 +97,7 @@ async function main() {
   console.log("  1) SMS");
   console.log("  2) Facebook");
   console.log("  3) Slack");
+  console.log("  4) Discord");
 
   const seleccion = await rl.question(
     "\nIngresá los números separados por coma (ej: 1,3) o Enter para ninguno: "
